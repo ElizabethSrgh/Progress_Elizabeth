@@ -1,0 +1,110 @@
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EAD0D0"
+    tools:context=".MainActivity">
+
+    <!-- Bagian Judul -->
+    <TextView
+        android:id="@+id/titleText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MANAGE COLLECTION"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:paddingTop="24dp"/>
+
+    <!-- Bagian Subjudul -->
+    <TextView
+        android:id="@+id/subTitleText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Manage Clothing"
+        android:textSize="16sp"
+        android:textColor="#000000"
+        app:layout_constraintTop_toBottomOf="@id/titleText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:paddingTop="4dp"/>
+
+    <!-- Tombol Ikon Kamera -->
+    <ImageButton
+        android:id="@+id/cameraButton"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:src="@drawable/ic_camera" <!-- Gunakan ikon kamera Anda sendiri di drawable -->
+    app:layout_constraintTop_toBottomOf="@id/subTitleText"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    android:layout_marginTop="16dp"/>
+
+    <!-- Kategori Pakaian -->
+    <LinearLayout
+        android:id="@+id/categoriesLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/cameraButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp">
+
+        <TextView
+            android:id="@+id/topCategory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Top"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:padding="8dp"
+            android:background="@drawable/category_background" /> <!-- Drawable untuk background kategori -->
+
+        <TextView
+            android:id="@+id/skirtCategory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Skirt"
+            android:textColor="#000000"
+            android:padding="8dp"
+            android:background="@drawable/category_background" />
+
+        <TextView
+            android:id="@+id/accessoriesCategory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Accessories"
+            android:textColor="#000000"
+            android:padding="8dp"
+            android:background="@drawable/category_background" />
+    </LinearLayout>
+
+    <!-- Grid Pakaian -->
+    <GridLayout
+        android:id="@+id/clothingGrid"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="16dp"
+        android:rowCount="5"
+        android:columnCount="4"
+        app:layout_constraintTop_toBottomOf="@id/categoriesLayout"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <!-- Contoh item pakaian - tambahkan sesuai kebutuhan -->
+        <ImageView
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:src="@drawable/ic_sample_clothing" /> <!-- Ganti dengan drawable pakaian Anda -->
+
+        <!-- Tambahkan lebih banyak item sesuai kebutuhan -->
+
+    </GridLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
